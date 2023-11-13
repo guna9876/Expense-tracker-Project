@@ -1,7 +1,9 @@
-import ExpenseItem from "./components/ExpenseItem";
+import ExpenseItem from "./components/Expenses/ExpenseItem";
 import "./App.css";
-
+import './components/Expenses.css'
+import NewExpense from "./components/NewExpense/NewExpense";
 import React from "react";
+import Card from "./components/UI/Card1";
 
 const App = () => {
   const expenses = [
@@ -25,9 +27,9 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
-  return (
-    <div className="App">
-      <h2>lets get started</h2>
+  return (  
+    <Card className="expenses">
+       <NewExpense />
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
@@ -48,7 +50,7 @@ const App = () => {
         amount={expenses[3].amount}
         date={expenses[3].date}
       ></ExpenseItem>
-    </div>
+    </Card>
   );
 };
 
